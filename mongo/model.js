@@ -20,7 +20,7 @@ const Message = new Schema({
   createdDate : { type: Date, default: Date.now }
 });
 
-mongoose.connect('mongodb://localhost/radicha', { useNewUrlParser: true });
+mongoose.connect(process.env.NODE_MONGO_HOST, { useNewUrlParser: true });
 
 exports.User = mongoose.model('users', User);
 exports.Room = mongoose.model('rooms', Room);
